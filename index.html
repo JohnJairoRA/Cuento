@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo Naranja</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <h1>SentiDos</h1>
+    <div class="book-cover">
+        <img src="assets/Img/Caratula.jpg" alt="Portada del libro" id="book-image" />
+        <!-- Música de fondo -->
+        <audio id="background-audio" autoplay loop>
+            <source src="assets/Audio/Musicadefondoinicio de la pagina.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        <!-- Botón dentro de la imagen -->
+        <button class="start-adventure" id="start-adventure">La aventura comienza aquí</button>
+        <!-- Hoja en blanco con texto oculto -->
+        <div class="blank-page">
+            <div class="hidden-text" id="animated-text"></div>
+            <!-- Nuevo audio para el texto -->
+            <audio id="story-audio">
+                <source src="assets/Audio/Inicio del cuento.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <!-- Botón para pasar a la siguiente hoja -->
+            <button class="next-page" id="next-page" style="display: none;">Siguiente</button>
+        </div>
+        <!-- Contraportada -->
+        <div class="back-cover" id="back-cover" style="display: none;">
+            <img src="assets/Img/Topito Cueva.jpg" alt="Contraportada del libro" id="topito-image" />
+            <!-- Botón de inicio -->
+            <button class="restart-button" id="restart-button">Inicio</button>
+        </div>
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>

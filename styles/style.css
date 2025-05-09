@@ -1,0 +1,208 @@
+/* === Fondo y Animaciones Globales === */
+body {
+    background: linear-gradient(45deg, orange, yellow, pink, lightblue);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 5s infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* === Imagen de Fondo Responsiva === */
+.fullscreen-image {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 800px;
+    height: auto;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-image: url('img/topito-cueva.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* === Títulos y Texto Animado === */
+h1 {
+    text-align: center;
+    animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        color: red;
+    }
+    50% {
+        color: blue;
+    }
+    100% {
+        color: green;
+    }
+}
+
+/* === Contenedor del Libro === */
+.book-cover {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    perspective: 1500px;
+}
+
+.book-cover img {
+    width: 500px;
+    height: auto;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-origin: left center;
+    transition: transform 1s ease-in-out;
+}
+
+.book-cover.open img {
+    transform: perspective(1500px) rotateY(-180deg);
+}
+
+/* === Hoja en Blanco === */
+.blank-page {
+    position: absolute;
+    top: 0;
+    left: 62%;
+    width: 500px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-left: 1px solid #ccc;
+    z-index: 1000;
+    transform-origin: left center;
+    transform: perspective(1500px) rotateY(0deg);
+    transition: transform 1s ease-in-out;
+    display: none;
+}
+
+.book-cover.open .blank-page {
+    display: block;
+    transform: perspective(1500px) rotateY(-180deg);
+}
+
+.blank-page .hidden-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg);
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+/* === Contraportada del Libro === */
+.back-cover {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    height: 100vh;
+}
+
+.back-cover img {
+    width: 700px;
+    height: auto;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+/* === Botones === */
+/* Botón "La aventura comienza aquí" */
+.start-adventure {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, yellow, orange, red);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.start-adventure:hover {
+    background: linear-gradient(45deg, red, orange, yellow);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón "Siguiente" */
+.next-page {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotateY(180deg);
+    background: linear-gradient(45deg, lightblue, blue, darkblue);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.next-page:hover {
+    background: linear-gradient(45deg, darkblue, blue, lightblue);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón "Inicio" dentro de la imagen de Topito */
+#restart-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px yellow;
+    animation: glow 1s infinite alternate;
+}
+
+#restart-button:hover {
+    background-color: darkorange;
+}
+
+/* Animación para el botón "Inicio" */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px yellow;
+    }
+    to {
+        box-shadow: 0 0 20px orange;
+    }
+}
+
+
